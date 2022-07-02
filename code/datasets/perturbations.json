@@ -1,0 +1,704 @@
+{
+  "video_perturbations": {
+    "jumble": {
+      "name": "Jumble",
+      "type1": "video",
+      "type2": "Temporal"
+    },
+    "box_jumble": {
+      "name": "BoxJumble",
+      "type1": "video",
+      "type2": "Temporal"
+    },
+    "freeze": {
+      "name": "Freeze",
+      "type1": "video",
+      "type2": "Temporal"
+    },
+    "reverse_sampling": {
+      "name": "ReverseSample",
+      "type1": "video",
+      "type2": "Temporal"
+    },
+    "sampling": {
+      "name": "SampleRate",
+      "type1": "video",
+      "type2": "Temporal"
+    },
+    "codec1": {
+      "name": "Codec1",
+      "type1": "video",
+      "type2": "Digital"
+    },
+    "codec2": {
+      "name": "Codec2",
+      "type1": "video",
+      "type2": "Digital"
+    },
+    "jpeg": {
+      "name": "JPEG",
+      "type1": "video",
+      "type2": "Digital"
+    },
+    "static_rotate": {
+      "name": "Rotate",
+      "type1": "video",
+      "type2": "Camera"
+    },
+    "rotate": {
+      "name": "VarRotate",
+      "type1": "video",
+      "type2": "Camera"
+    },
+    "translate": {
+      "name": "Translate",
+      "type1": "video",
+      "type2": "Camera"
+    },
+    "motion_blur": {
+      "name": "MotionBlur",
+      "type1": "video",
+      "type2": "Blur"
+    },
+    "defocus_blur": {
+      "name": "Defocus",
+      "type1": "video",
+      "type2": "Blur"
+    },
+    "zoom_blur": {
+      "name": "ZoomBlur",
+      "type1": "video",
+      "type2": "Blur"
+    },
+    "shot_noise": {
+      "name": "Shot",
+      "type1": "video",
+      "type2": "Noise"
+    },
+    "impulse_noise": {
+      "name": "Impulse",
+      "type1": "video",
+      "type2": "Noise"
+    },
+    "speckle_noise": {
+      "name": "Speckle",
+      "type1": "video",
+      "type2": "Noise"
+    },
+    "gaussian_noise": {
+      "name": "Gaussian",
+      "type1": "video",
+      "type2": "Noise"
+    }
+  },
+  "text_perturbations": {
+    "active_to_passive": {
+      "name": "Passive",
+      "type1": "text",
+      "type2": "TextStyle",
+      "type3": "Natural"
+    },
+    "append_irr": {
+      "name": "AppendIrr",
+      "type1": "text",
+      "type2": "AddText",
+      "type3": "Natural"
+    },
+    "casual_to_formal": {
+      "name": "Formal",
+      "type1": "text",
+      "type2": "TextStyle",
+      "type3": "Natural"
+    },
+    "tense": {
+      "name": "Tense",
+      "type1": "text",
+      "type2": "TextStyle",
+      "type3": "Natural"
+    },
+    "formal_to_casual": {
+      "name": "Casual",
+      "type1": "text",
+      "type2": "TextStyle",
+      "type3": "Natural"
+    },
+    "insert_adv": {
+      "name": "AddAdv",
+      "type1": "text",
+      "type2": "AddText",
+      "type3": "Natural"
+    },
+    "mlm_suggestion": {
+      "name": "MLM",
+      "type1": "text",
+      "type2": "SwapText",
+      "type3": "Machine"
+    },
+    "gender_swap": {
+      "name": "GenderSwap",
+      "type1": "text",
+      "type2": "Bias",
+      "type3": "Natural"
+    },
+    "gender_male": {
+      "name": "AllMale",
+      "type1": "text",
+      "type2": "Bias",
+      "type3": "Natural"
+    },
+    "gender_female": {
+      "name": "AllFemale",
+      "type1": "text",
+      "type2": "Bias",
+      "type3": "Natural"
+    },
+    "gender_neutral": {
+      "name": "GenderNeutral",
+      "type1": "text",
+      "type2": "Bias",
+      "type3": "Natural"
+    },
+    "back_trans": {
+      "name": "BackTrans",
+      "type1": "text",
+      "type2": "SwapText",
+      "type3": "Machine"
+    },
+    "keyboard": {
+      "name": "Keyboard",
+      "type1": "text",
+      "type2": "ChangeChar",
+      "type3": "Natural"
+    },
+    "multi_pos_swap_JJ": {
+      "name": "JJSwap",
+      "type1": "text",
+      "type2": "SwapText",
+      "type3": "Machine"
+    },
+    "multi_pos_swap_NN": {
+      "name": "NNSwap",
+      "type1": "text",
+      "type2": "SwapText",
+      "type3": "Machine"
+    },
+    "no_nouns": {
+      "name": "noNN",
+      "type1": "text",
+      "type2": "DropText",
+      "type3": "Synthetic"
+    },
+    "no_verbs": {
+      "name": "NoVB",
+      "type1": "text",
+      "type2": "DropText",
+      "type3": "Synthetic"
+    },
+    "no_nouns_and_no_verbs": {
+      "name": "NoNN&VB",
+      "type1": "text",
+      "type2": "DropText",
+      "type3": "Synthetic"
+    },
+    "only_nouns": {
+      "name": "NNOnly",
+      "type1": "text",
+      "type2": "DropText",
+      "type3": "Synthetic"
+    },
+    "only_verbs": {
+      "name": "VBOnly",
+      "type1": "text",
+      "type2": "DropText",
+      "type3": "Synthetic"
+    },
+    "only_nouns_and_only_verbs": {
+      "name": "NN&VBOnly",
+      "type1": "text",
+      "type2": "DropText",
+      "type3": "Synthetic"
+    },
+    "random_noun": {
+      "name": "RandNN",
+      "type1": "text",
+      "type2": "DropText",
+      "type3": "Synthetic"
+    },
+    "random_verb": {
+      "name": "RandVB",
+      "type1": "text",
+      "type2": "DropText",
+      "type3": "Synthetic"
+    },
+    "prefix_swap": {
+      "name": "PrefixSwap",
+      "type1": "text",
+      "type2": "ChangeChar",
+      "type3": "Natural"
+    },
+    "punctuation": {
+      "name": "Punct",
+      "type1": "text",
+      "type2": "ChangeChar",
+      "type3": "Natural"
+    },
+    "reverse_neg": {
+      "name": "Neg",
+      "type1": "text",
+      "type2": "TextStyle",
+      "type3": "Natural"
+    },
+    "spelling_error": {
+      "name": "SpellErr",
+      "type1": "text",
+      "type2": "ChangeChar",
+      "type3": "Natural"
+    },
+    "swap_syn_word_embedding": {
+      "name": "SynWordEmbd",
+      "type1": "text",
+      "type2": "SwapText",
+      "type3": "Synthetic"
+    },
+    "swap_syn_wordnet": {
+      "name": "SynWordNet",
+      "type1": "text",
+      "type2": "SwapText",
+      "type3": "Synthetic"
+    },
+    "typos": {
+      "name": "Typos",
+      "type1": "text",
+      "type2": "ChangeChar",
+      "type3": "Natural"
+    },
+    "ocr": {
+      "name": "OCR",
+      "type1": "text",
+      "type2": "ChangeChar",
+      "type3": "Natural"
+    },
+    "drop_first": {
+      "name": "DropFirst",
+      "type1": "text",
+      "type2": "Positional",
+      "type3": "Synthetic"
+    },
+    "drop_last": {
+      "name": "DropLast",
+      "type1": "text",
+      "type2": "Positional",
+      "type3": "Synthetic"
+    },
+    "drop_first_and_last": {
+      "name": "DropFirstLast",
+      "type1": "text",
+      "type2": "Positional",
+      "type3": "Synthetic"
+    },
+    "shuffle_order": {
+      "name": "Shuffle_order",
+      "type1": "text",
+      "type2": "Positional",
+      "type3": "Synthetic"
+    }
+  },
+  "multimodal_perturbations": {
+    "box_jumble&append_irr": {
+      "name": "",
+      "text_perturbation": "append_irr",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&gender_female": {
+      "name": "",
+      "text_perturbation": "gender_female",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&gender_male": {
+      "name": "",
+      "text_perturbation": "gender_male",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&gender_swap": {
+      "name": "",
+      "text_perturbation": "gender_swap",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&mlm_suggestion": {
+      "name": "",
+      "text_perturbation": "mlm_suggestion",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&multi_pos_swap_NN": {
+      "name": "",
+      "text_perturbation": "multi_pos_swap_NN",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&no_nouns_and_no_verbs": {
+      "name": "",
+      "text_perturbation": "no_nouns_and_no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&no_verbs": {
+      "name": "",
+      "text_perturbation": "no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&random_noun": {
+      "name": "",
+      "text_perturbation": "random_noun",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&shuffle_order": {
+      "name": "",
+      "text_perturbation": "shuffle_order",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "box_jumble&spelling_error": {
+      "name": "",
+      "text_perturbation": "spelling_error",
+      "type1": "multimodal",
+      "video_perturbation": "box_jumble"
+    },
+    "defocus_blur&append_irr": {
+      "name": "",
+      "text_perturbation": "append_irr",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&gender_female": {
+      "name": "",
+      "text_perturbation": "gender_female",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&gender_male": {
+      "name": "",
+      "text_perturbation": "gender_male",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&gender_swap": {
+      "name": "",
+      "text_perturbation": "gender_swap",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&mlm_suggestion": {
+      "name": "",
+      "text_perturbation": "mlm_suggestion",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&multi_pos_swap_NN": {
+      "name": "",
+      "text_perturbation": "multi_pos_swap_NN",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&no_nouns_and_no_verbs": {
+      "name": "",
+      "text_perturbation": "no_nouns_and_no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&no_verbs": {
+      "name": "",
+      "text_perturbation": "no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&random_noun": {
+      "name": "",
+      "text_perturbation": "random_noun",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&shuffle_order": {
+      "name": "",
+      "text_perturbation": "shuffle_order",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "defocus_blur&spelling_error": {
+      "name": "",
+      "text_perturbation": "spelling_error",
+      "type1": "multimodal",
+      "video_perturbation": "defocus_blur"
+    },
+    "jpeg&append_irr": {
+      "name": "",
+      "text_perturbation": "append_irr",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&gender_female": {
+      "name": "",
+      "text_perturbation": "gender_female",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&gender_male": {
+      "name": "",
+      "text_perturbation": "gender_male",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&gender_swap": {
+      "name": "",
+      "text_perturbation": "gender_swap",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&mlm_suggestion": {
+      "name": "",
+      "text_perturbation": "mlm_suggestion",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&multi_pos_swap_NN": {
+      "name": "",
+      "text_perturbation": "multi_pos_swap_NN",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&no_nouns_and_no_verbs": {
+      "name": "",
+      "text_perturbation": "no_nouns_and_no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&no_verbs": {
+      "name": "",
+      "text_perturbation": "no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&random_noun": {
+      "name": "",
+      "text_perturbation": "random_noun",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&shuffle_order": {
+      "name": "",
+      "text_perturbation": "shuffle_order",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jpeg&spelling_error": {
+      "name": "",
+      "text_perturbation": "spelling_error",
+      "type1": "multimodal",
+      "video_perturbation": "jpeg"
+    },
+    "jumble&append_irr": {
+      "name": "",
+      "text_perturbation": "append_irr",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&gender_female": {
+      "name": "",
+      "text_perturbation": "gender_female",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&gender_male": {
+      "name": "",
+      "text_perturbation": "gender_male",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&gender_swap": {
+      "name": "",
+      "text_perturbation": "gender_swap",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&mlm_suggestion": {
+      "name": "",
+      "text_perturbation": "mlm_suggestion",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&multi_pos_swap_NN": {
+      "name": "",
+      "text_perturbation": "multi_pos_swap_NN",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&no_nouns_and_no_verbs": {
+      "name": "",
+      "text_perturbation": "no_nouns_and_no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&no_verbs": {
+      "name": "",
+      "text_perturbation": "no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&random_noun": {
+      "name": "",
+      "text_perturbation": "random_noun",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&shuffle_order": {
+      "name": "",
+      "text_perturbation": "shuffle_order",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "jumble&spelling_error": {
+      "name": "",
+      "text_perturbation": "spelling_error",
+      "type1": "multimodal",
+      "video_perturbation": "jumble"
+    },
+    "shot_noise&append_irr": {
+      "name": "",
+      "text_perturbation": "append_irr",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&gender_female": {
+      "name": "",
+      "text_perturbation": "gender_female",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&gender_male": {
+      "name": "",
+      "text_perturbation": "gender_male",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&gender_swap": {
+      "name": "",
+      "text_perturbation": "gender_swap",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&mlm_suggestion": {
+      "name": "",
+      "text_perturbation": "mlm_suggestion",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&multi_pos_swap_NN": {
+      "name": "",
+      "text_perturbation": "multi_pos_swap_NN",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&no_nouns_and_no_verbs": {
+      "name": "",
+      "text_perturbation": "no_nouns_and_no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&no_verbs": {
+      "name": "",
+      "text_perturbation": "no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&random_noun": {
+      "name": "",
+      "text_perturbation": "random_noun",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&shuffle_order": {
+      "name": "",
+      "text_perturbation": "shuffle_order",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "shot_noise&spelling_error": {
+      "name": "",
+      "text_perturbation": "spelling_error",
+      "type1": "multimodal",
+      "video_perturbation": "shot_noise"
+    },
+    "static_rotate&append_irr": {
+      "name": "",
+      "text_perturbation": "append_irr",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&gender_female": {
+      "name": "",
+      "text_perturbation": "gender_female",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&gender_male": {
+      "name": "",
+      "text_perturbation": "gender_male",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&gender_swap": {
+      "name": "",
+      "text_perturbation": "gender_swap",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&mlm_suggestion": {
+      "name": "",
+      "text_perturbation": "mlm_suggestion",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&multi_pos_swap_NN": {
+      "name": "",
+      "text_perturbation": "multi_pos_swap_NN",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&no_nouns_and_no_verbs": {
+      "name": "",
+      "text_perturbation": "no_nouns_and_no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&no_verbs": {
+      "name": "",
+      "text_perturbation": "no_verbs",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&random_noun": {
+      "name": "",
+      "text_perturbation": "random_noun",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&shuffle_order": {
+      "name": "",
+      "text_perturbation": "shuffle_order",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    },
+    "static_rotate&spelling_error": {
+      "name": "",
+      "text_perturbation": "spelling_error",
+      "type1": "multimodal",
+      "video_perturbation": "static_rotate"
+    }
+  }
+}
