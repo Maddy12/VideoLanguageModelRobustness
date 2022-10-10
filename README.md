@@ -1,4 +1,6 @@
-# MultiModalRobustness
+# Video-Language Model Robustness
+
+## Video and Language Perturbations
  <center><img src="./images/PerturbationTypesCombined.png" width=600px /></center> <br>
     <center>Different real-world perturbations used in this study. </center>
 
