@@ -33,7 +33,8 @@ This is useful when modifying video feature extractor code from
 [fairseq](https://github.com/facebookresearch/fairseq/tree/main/examples/MMPT/scripts/video_feature_extractor)
 and [VideoFeatureExtractor](https://github.com/ArrowLuo/VideoFeatureExtractor/).
 
-
+## Code
+More details on how to run the code can be found here: [`README.MD`](https://github.com/Maddy12/MultiModalVideoRobustness/blob/master/code/README.md)
 ## Results
   <table align=center width=800px>
     <center><img src="./images/TeaserAll.png" width=600px /></center><br>
