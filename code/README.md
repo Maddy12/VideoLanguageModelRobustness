@@ -44,6 +44,7 @@ and [VideoFeatureExtractor](https://github.com/ArrowLuo/VideoFeatureExtractor/) 
 * [MIL-NICE](https://github.com/antoine77340/MIL-NCE_HowTo100M)
 * [UniVL](https://github.com/microsoft/UniVL)
 * [COOT](https://github.com/gingsi/coot-videotext)
+* [Frozen-in-Time (FIT)](https://github.com/m-bain/frozen-in-time)
 
 # Robustness Scores
 The file [`robustness_scores.py`](https://github.com/Maddy12/MultiModalVideoRobustness/blob/master/code/robustness_scores.py) provides sample code on how to calculate the robustness score for perturbation combinations. This is done by collecting model retreival scores for R@5, R@10, R@25 for different perturbation scores. This particular function requires a `pandas.dataframe` as the results of models and their runs were collected in `csv` files. An example of what this file may look like is:
