@@ -28,10 +28,10 @@ the original video for one column and the target file for the second. This shoul
 as `datasets/{youcook2, msrvtt}_videolist.csv`. Example:
 
 ```text
-/home/c3-0/datasets/YouCook2/validation/226/videos/xHr8X2Wpmno.mkv,/home/c3-0/datasets/robustness/youcook2/xHr8X2Wpmno.mkv
-/home/c3-0/datasets/YouCook2/validation/105/videos/V53XmPeyjIU.mkv,/home/c3-0/datasets/robustness/youcook2/V53XmPeyjIU.mkv
-/home/c3-0/datasets/YouCook2/validation/201/videos/mZwK0TBI1iY.mkv,/home/c3-0/datasets/robustness/youcook2/mZwK0TBI1iY.mkv
-/home/c3-0/datasets/YouCook2/validation/310/videos/gEYyWqs1oL0.mp4,/home/c3-0/datasets/robustness/youcook2/gEYyWqs1oL0.mp4
+YouCook2/validation/226/videos/xHr8X2Wpmno.mkv,robustness/youcook2/xHr8X2Wpmno.mkv
+YouCook2/validation/105/videos/V53XmPeyjIU.mkv,robustness/youcook2/V53XmPeyjIU.mkv
+YouCook2/validation/201/videos/mZwK0TBI1iY.mkv,robustness/youcook2/mZwK0TBI1iY.mkv
+YouCook2/validation/310/videos/gEYyWqs1oL0.mp4,robustness/youcook2/gEYyWqs1oL0.mp4
 ```
 
 Use `video_perturbations.py` by creating a `VideoPerturbation` object by initializing the perturbation and severity.
@@ -45,4 +45,15 @@ and [VideoFeatureExtractor](https://github.com/ArrowLuo/VideoFeatureExtractor/) 
 * [UniVL](https://github.com/microsoft/UniVL)
 * [COOT](https://github.com/gingsi/coot-videotext)
 
+# Robustness Scores
+The file [`robustness_scores.py`](https://github.com/Maddy12/MultiModalVideoRobustness/blob/master/code/robustness_scores.py) provides sample code on how to calculate the robustness score for perturbation combinations. This is done by collecting model retreival scores for R@5, R@10, R@25 for different perturbation scores. This particular function requires a `pandas.dataframe` as the results of models and their runs were collected in `csv` files. An example of what this file may look like is:
+
+ | R@1 | R@5 | Median-R | Model | Dataset | Perturbation | Severity | Type | PerturbModality | Name | Train | R@1 Error | R@5 Error | 
+ | ----| ----|----------|-------|---------|--------------|----------|------|-----------------|------|-------|-----------|-----------|
+ |0.103|0.227|41|VideoClip|MSRVTT|shuffle_order|0|Positional|Text|ShuffleOrder|zs|0|0|
+ |0.072|0.181|59|VideoClip|MSRVTT|shuffle_order|1|Positional|Text|ShuffleOrder|zs|-0.031|-0.046|
+ |0.103|0.227|41|VideoClip|MSRVTT|shot_noise|0|Noise|Video|ShotNoise|zs|0|0|
+ |0.063|0.153|63.5|VideoClip|MSRVTT|shot_noise|1|Noise|Video|ShotNoise|zs|-0.04|-0.074|
+
+Each perturbation will have a severity of 0 that represents the baseline scores for easier calculation. Any severity greater than 0 indicates a perturbation was applied.
 
