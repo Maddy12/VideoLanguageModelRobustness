@@ -3,9 +3,10 @@
 ## Video and Language Perturbations
  <center><img src="./images/PerturbationTypesCombined.png" width=600px /></center> <br>
     <center>Different real-world perturbations used in this study. </center>
+For more information, check out our [site](https://bit.ly/3CNOly4).
 
 ## Text Perturbations
-To genearate text perturbations, code is available in `generate_noisy_text.py`. 
+To generate text perturbations, code is available in `generate_noisy_text.py`. 
 You can call this script from the command line, for example:
 
 ```bash
@@ -25,37 +26,59 @@ To run `generate_noisy_videos.py`, an example is:
 ```bash
 python generate_noisy_videos.py msrvtt data/msrvtt/videos data/msrvtt/noisy_videos blur
 ```
+
 This will run generating videos for MSRVTT where the original videos are stored in `data/msrvtt/videos`, perturbing with
 blur and saving the copies in `data/msrvtt/noisy_videos`.
+
+Before running this command, you need to generate a file for the MSRVTT and YouCook2 dataset with a mapping of
+the original video for one column and the target file for the second. This should be stored
+as `datasets/{youcook2, msrvtt}_videolist.csv`. Example:
+
+```text
+YouCook2/validation/226/videos/xHr8X2Wpmno.mkv,robustness/youcook2/xHr8X2Wpmno.mkv
+YouCook2/validation/105/videos/V53XmPeyjIU.mkv,robustness/youcook2/V53XmPeyjIU.mkv
+YouCook2/validation/201/videos/mZwK0TBI1iY.mkv,robustness/youcook2/mZwK0TBI1iY.mkv
+YouCook2/validation/310/videos/gEYyWqs1oL0.mp4,robustness/youcook2/gEYyWqs1oL0.mp4
+```
+
 
 Use `video_perturbations.py` by creating a `VideoPerturbation` object by initializing the perturbation and severity.
 This is useful when modifying video feature extractor code from 
 [fairseq](https://github.com/facebookresearch/fairseq/tree/main/examples/MMPT/scripts/video_feature_extractor)
 and [VideoFeatureExtractor](https://github.com/ArrowLuo/VideoFeatureExtractor/).
 
-## Code
-More details on how to run the code can be found here: [`README.MD`](https://github.com/Maddy12/MultiModalVideoRobustness/blob/master/code/README.md)
-## Results
-  <table align=center width=800px>
-    <center><img src="./images/TeaserAll.png" width=600px /></center><br>
-    <center>A performance and robustness visualization of multimodal models on YouCook2-P and MSRVTT-P. 
-      y-axis: relative robustness (lower is better), x-axis: R@5 on text-to-video retrieval,  
-      , and the size of circle indicates FLOPs. The models used are 
-      <a href="https://github.com/facebookresearch/fairseq/tree/main/examples/MMPT">Videoclip</a>,
-      <a href="https://github.com/microsoft/UniVL">Univl</a>,
-      <a href="https://github.com/gingsi/coot-videotext">COOT</a>, and
-      <a href="https://github.com/antoine77340/MIL-NCE_HowTo100M">HowTo100M MIL</a>.
-      The results vary based on the dataset, 
-      for example, 
-<a href="https://github.com/facebookresearch/fairseq/tree/main/examples/MMPT">Videoclip</a> from scratch is both more robust and a better performer on 
-      the MSRVTT dataset than on YouCook2. This relationship <i>indicatea a difference on
-      how models <b>handle clips from long, complex activities</b> compared to videos that 
-      are short and of a simple activity</i>.
-      The top performers are consistently <a href="https://github.com/facebookresearch/fairseq/tree/main/examples/MMPT">Videoclip</a>
-      and <a href="https://github.com/microsoft/UniVL">Univl</a>, which are also the larger 
-      models. </center>
-  </table>
+# Original Model Code
+* [VideoClip](https://github.com/facebookresearch/fairseq/tree/main/examples/MMPT)
+* [MIL-NICE](https://github.com/antoine77340/MIL-NCE_HowTo100M)
+* [UniVL](https://github.com/microsoft/UniVL)
+* [COOT](https://github.com/gingsi/coot-videotext)
+* [Frozen-in-Time (FIT)](https://github.com/m-bain/frozen-in-time)
 
+# Robustness Scores
+The file [`robustness_scores.py`](https://github.com/Maddy12/MultiModalVideoRobustness/blob/master/code/robustness_scores.py) provides sample code on how to calculate the robustness score for perturbation combinations. This is done by collecting model retreival scores for R@5, R@10, R@25 for different perturbation scores. This particular function requires a `pandas.dataframe` as the results of models and their runs were collected in `csv` files. An example of what this file may look like is:
 
-## Examples
+ | R@1 | R@5 | Median-R | Model | Dataset | Perturbation | Severity | Type | PerturbModality | Name | Train | R@1 Error | R@5 Error | 
+ | ----| ----|----------|-------|---------|--------------|----------|------|-----------------|------|-------|-----------|-----------|
+ |0.103|0.227|41|VideoClip|MSRVTT|shuffle_order|0|Positional|Text|ShuffleOrder|zs|0|0|
+ |0.072|0.181|59|VideoClip|MSRVTT|shuffle_order|1|Positional|Text|ShuffleOrder|zs|-0.031|-0.046|
+ |0.103|0.227|41|VideoClip|MSRVTT|shot_noise|0|Noise|Video|ShotNoise|zs|0|0|
+ |0.063|0.153|63.5|VideoClip|MSRVTT|shot_noise|1|Noise|Video|ShotNoise|zs|-0.04|-0.074|
+
+Each perturbation will have a severity of 0 that represents the baseline scores for easier calculation. Any severity greater than 0 indicates a perturbation was applied.
+
+# Citation
+
+```bibtex
+@inproceedings{
+schiappa2022robustness,
+title={Robustness Analysis of Video-Language Models Against Visual and Language Perturbations},
+author={Madeline Chantry Schiappa and Shruti Vyas and Hamid Palangi and Yogesh S Rawat and Vibhav Vineet},
+booktitle={Thirty-sixth Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+year={2022},
+url={https://openreview.net/forum?id=A79jAS4MeW9}
+
+}
+```
+
+# Examples
 For examples, please see [`EXAMPLES.md`](https://github.com/Maddy12/MultiModalVideoRobustness/blob/master/EXAMPLES.md).
