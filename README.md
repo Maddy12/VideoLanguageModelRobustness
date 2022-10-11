@@ -1,9 +1,12 @@
 # Video-Language Model Robustness
 
 ## Video and Language Perturbations
+This work evaluted the robustness of video-language models on text-to-video retreival using a variety of video and/or text perturbations. For more information, check out our [site](https://bit.ly/3CNOly4).
+
+<p align="center">
  <center><img src="./images/PerturbationTypesCombined.png" width=600px /></center> <br>
     <center>Different real-world perturbations used in this study. </center>
-For more information, check out our [site](https://bit.ly/3CNOly4).
+</p>
 
 ## Text Perturbations
 To generate text perturbations, code is available in `generate_noisy_text.py`. 
